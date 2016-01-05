@@ -2,8 +2,8 @@
   <h2 class="signup_title">Signup</h2><br>
 
   <p class="invalid">
-    <% if locals.include?(:missing_field) %>
-    <%= missing_field %>
+    <% if locals.include?(:emtpy_field) %>
+    <%= emtpy_field %>
     <% elsif locals.include?(:taken_username) %>
     <%= taken_username %>
     <% end %>

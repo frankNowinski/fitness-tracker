@@ -1,0 +1,5 @@
+<h2 id="goals_index_title">Your Current Fitness Goals</h2><br>
+
+<% @user.goals.each do |goal| %>
+<h2 id="goal_title"><a href="/goals/<%=goal.id%>"><%= goal.title %></a></h2>
+<% end %>

@@ -2,8 +2,8 @@
   <h2 class="signup_title">Login</h2><br>
 
   <p class="invalid">
-    <% if locals.include?(:missing_field) %>
-    <%= missing_field %>
+    <% if locals.include?(:empty_field) %>
+    <%= empty_field %>
     <% elsif locals.include?(:invalid_login) %>
     <%= invalid_login %>
     <% end %>

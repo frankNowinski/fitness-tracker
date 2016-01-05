@@ -1,8 +1,6 @@
-require 'spec_helper'
-
 describe UsersController do
 
-  describe "Login" do
+  describe 'Login' do
     it 'loads the login page' do
         get '/login'
         expect(last_response.status).to eq(200)
@@ -20,7 +18,7 @@ describe UsersController do
       expect(last_response.status).to eq(302)
       follow_redirect!
       expect(last_response.status).to eq(200)
-      expect(last_response.body).to include("Welcome,")
+      expect(last_response.body).to include("Your Current Fitness Goals")
     end
 
     it 'does not let a user login without a username' do
@@ -31,7 +29,7 @@ describe UsersController do
         }
       }
       post '/login', params
-      expect(last_response.body).to include("Please fill in each field.")
+      expect(last_response.body).to include("Please fill in both a username and a password.")
     end
 
     it 'does not let a user login without a password' do
@@ -42,7 +40,7 @@ describe UsersController do
         }
       }
       post '/login', params
-      expect(last_response.body).to include("Please fill in each field.")
+      expect(last_response.body).to include("Please fill in both a username and a password.")
     end
 
     it 'does not let a user sign up with a username that is taken' do

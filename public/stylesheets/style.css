@@ -4,6 +4,10 @@ body {
   font-family: 'Oxygen', sans-serif;
 }
 
+label {
+  font-size: 1.3em;
+}
+
 /* HEADER */
 
 #header {
@@ -46,4 +50,37 @@ body {
 
 .signup_title {
   margin-left: 110px;
+}
+
+/* NEW GOAL */
+
+#goals_index_title {
+  text-align: center;
+  margin-top: 35px;
+}
+
+#instructions {
+  text-align:center;
+}
+
+#work {
+  margin-left: 54px;
+}
+
+#goal-button {
+  margin-left: 95px;
+}
+
+/* DISPALY GOALS */
+
+#goal_title {
+  text-align: center;
+}
+
+#goal_title>a {
+  color: white;
+}
+
+a:hover {
+  color: white;
 }

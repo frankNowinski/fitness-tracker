@@ -1,0 +1,84 @@
+<h2 id="goals_index_title">Create a New Fitness Goal!</h2><br>
+
+<form action="/goals" method="post">
+
+  <p class="lead invalid"><%= emtpy_field if locals.include?(:empty_field) %></p>
+
+  <!-- Goal Title -->
+  <div class="col-sm-offset-2 row">
+    <div class="col-sm-2">
+      <label for="Goal Title" class="form-control-label">Goal Title:</label>
+    </div>
+    <div class="col-sm-5">
+      <input type="text" id="username" name="title" class="form-control" placeholder="What would you like to call your goal?">
+    </div>
+  </div><br><br>
+
+  <h4 id="instructions">Fill out the amount of time you're going to strive to workout each muscle group this week (record your time in minutes).</h4><br><br>
+
+  <div id="work">
+
+  <!-- Chest -->
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-1">
+      <label for="chest" class="form-control-label">Chest:</label>
+    </div>
+    <div class="col-sm-1">
+      <input type="text" id="chest" name="entries[chest]" class="form-control" placeholder="min">
+    </div>
+
+    <!-- Shoulders -->
+    <div class="col-sm-1">
+      <label for="shoulders" class="form-control-label">Shoulders:</label>
+    </div>
+    <div class="col-sm-1">
+      <input type="text" id="shoulders" name="entries[shoulders]" class="form-control" placeholder="min">
+    </div>
+  </div><br>
+
+
+  <!-- Back -->
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-1">
+      <label for="back" class="form-control-label">Back:</label>
+    </div>
+    <div class="col-sm-1">
+      <input type="text" id="back" name="entries[back]" class="form-control" placeholder="min">
+    </div>
+
+    <!-- Arms -->
+    <div class="col-sm-1">
+      <label for="arms" class="form-control-label">Bi's/Tri's:</label>
+    </div>
+    <div class="col-sm-1">
+      <input type="text" id="arms" name="entries[arms]" class="form-control" placeholder="min">
+    </div>
+  </div><br>
+
+  <!-- Legs -->
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-1">
+      <label for="legs" class="form-control-label">Legs:</label>
+    </div>
+    <div class="col-sm-1">
+      <input type="text" id="legs" name="entries[legs]" class="form-control" placeholder="min">
+    </div>
+
+    <!-- Cardio -->
+    <div class="col-sm-1">
+      <label for="cardio" class="form-control-label">Cardio:</label>
+    </div>
+    <div class="col-sm-1">
+      <input type="text" id="cardio" name="entries[cardio]" class="form-control" placeholder="min">
+    </div>
+  </div><br>
+</div><br>
+
+  <!-- Submit Button -->
+  <div class="form-group row" id="goal-button">
+    <div class="col-sm-offset-4 col-sm-2">
+      <button type="submit" value="submit" class="btn btn-success btn-lg">Create Your Goal</button>
+    </div>
+  </div>
+
+</form>

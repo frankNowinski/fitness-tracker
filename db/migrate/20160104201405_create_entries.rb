@@ -4,6 +4,7 @@ class CreateEntries < ActiveRecord::Migration
       t.integer :chest
       t.integer :back
       t.integer :shoulders
+      t.integer :arms
       t.integer :legs
       t.integer :cardio
       t.integer :goal_id

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if !logged_in?
       erb :'user/signup'
     else
-      redirect '/goals'
+      redirect '/current_goal'
     end
   end
 
@@ -17,13 +17,13 @@ class UsersController < ApplicationController
       @user.before_save
       @user.save
       session[:user_id] = @user.id
-      redirect to '/'
+      redirect to '/current_goal'
     end
   end
 
   get '/login' do
     if logged_in?
-      redirect '/goals'
+      redirect '/current_goal'
     else
       erb :'user/login'
     end
@@ -31,12 +31,12 @@ class UsersController < ApplicationController
 
   post '/login' do
     if User.emtpy_field?(params)
-      erb :'user/login', locals: {missing_field: "Please fill in both a username and a password."}
+      erb :'user/login', locals: {empty_field: "Please fill in both a username and a password."}
     else
       @user = User.find_by(username: params[:data][:username])
       if @user && @user.authenticate(params[:data][:password])
         session[:user_id] = @user.id
-        redirect '/index'
+        redirect '/current_goal'
       else
         erb :'user/login', locals: {invalid_login: "Invalid username or password."}
       end

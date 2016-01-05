@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20160104201405) do
     t.integer "chest"
     t.integer "back"
     t.integer "shoulders"
+    t.integer "arms"
     t.integer "legs"
     t.integer "cardio"
     t.integer "goal_id"

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe UsersController do
 
   describe "Signup" do
@@ -27,7 +25,7 @@ describe UsersController do
         }
       }
       post '/signup', params
-      expect(last_response.body).to include("Please fill in each field.")
+      expect(last_response.body).to include("Please fill in both a username and a password.")
     end
 
     it 'does not let a user sign up without a password' do
@@ -38,7 +36,7 @@ describe UsersController do
         }
       }
       post '/signup', params
-      expect(last_response.body).to include("Please fill in each field.")
+      expect(last_response.body).to include("Please fill in both a username and a password.")
     end
 
     it 'does not let a user sign up with a username that is taken' do
