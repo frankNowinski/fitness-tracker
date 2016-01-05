@@ -27,21 +27,5 @@ class ApplicationController < Sinatra::Base
     def current_user
       User.find(session[:user_id])
     end
-
-    def invalid_signup?
-      if missing_field?
-        @error_message = {missing_field: "Please fill in each field."}
-      elsif taken_username?
-        @error_message = {taken_username: "Username is already taken."}
-      end
-    end
-
-    def missing_field?
-      params[:data].values.any?{|x| x == ""}
-    end
-
-    def taken_username?
-      User.find_by(username: params[:data][:username].downcase).present?
-    end
   end
 end

@@ -9,8 +9,9 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    if invalid_signup?
-      erb :'user/signup', locals: @error_message
+    error_message = User.invalid_signup?(params)
+    if error_message.present?
+      erb :'user/signup', locals: error_message
     else
       @user = User.new(params[:data])
       @user.before_save
@@ -21,11 +22,25 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-
+    if logged_in?
+      redirect '/goals'
+    else
+      erb :'user/login'
+    end
   end
 
   post '/login' do
-
+    if User.emtpy_field?(params)
+      erb :'user/login', locals: {missing_field: "Please fill in both a username and a password."}
+    else
+      @user = User.find_by(username: params[:data][:username])
+      if @user && @user.authenticate(params[:data][:password])
+        session[:user_id] = @user.id
+        redirect '/index'
+      else
+        erb :'user/login', locals: {invalid_login: "Invalid username or password."}
+      end
+    end
   end
 
   get '/logout' do

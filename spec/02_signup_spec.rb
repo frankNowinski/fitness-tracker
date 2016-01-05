@@ -1,16 +1,6 @@
 require 'spec_helper'
 
-describe ApplicationController do
-
-  describe "Homepage" do
-    it 'loads the homepage' do
-      get '/'
-      expect(last_response.status).to eq(200)
-      expect(last_response.body).to include("Welcome to Fitness Tracker")
-      expect(last_response.body).to include("Signup")
-      expect(last_response.body).to include("Login")
-    end
-  end
+describe UsersController do
 
   describe "Signup" do
     it 'loads the signup page' do
@@ -18,7 +8,7 @@ describe ApplicationController do
         expect(last_response.status).to eq(200)
     end
 
-    it 'signup directs user to twitter index' do
+    it 'signup directs user to index' do
       params = {
         :data => {
           :username => "Tom",

@@ -1,5 +1,5 @@
 body {
-  background-color: #007299;
+  background-color: #1ac5ff;
   color: white;
   font-family: 'Oxygen', sans-serif;
 }
@@ -7,7 +7,7 @@ body {
 /* HEADER */
 
 #header {
-  background-color: #00c0ff;
+  background-color: #00abe6;
   color: white;
   border-bottom: 1px #0099cc solid;
 }
@@ -39,4 +39,11 @@ body {
 
 .invalid {
   color: red;
+  font-size: 1.2em;
+}
+
+/* SIGNUP - LOGIN */
+
+.signup_title {
+  margin-left: 110px;
 }
