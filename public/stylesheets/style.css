@@ -1,0 +1,42 @@
+body {
+  background-color: #007299;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+
+/* HEADER */
+
+#header {
+  background-color: #00c0ff;
+  color: white;
+  border-bottom: 1px #0099cc solid;
+}
+
+#homepage {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#homepage>a {
+  color: white;
+  margin-right: 60px;
+  text-shadow: 2px 2px 2px navy;
+}
+
+/* HOMEPAGE */
+
+#homepage_title {
+  padding: 80px;
+  text-align: center;
+  text-shadow: 1px 2px 2px navy;
+}
+
+.login_link {
+  color: white;
+  padding: 50px;
+  text-shadow: 1px 2px 2px navy;
+}
+
+.invalid {
+  color: red;
+}
