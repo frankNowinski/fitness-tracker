@@ -1,23 +1,12 @@
-<h2 id="goals_index_title">Edit Your Fitness Goal</h2><br>
+<h2 id="goals_index_title">Congratulations on Making Progress!</h2><br>
 
-<form action="/goals/<%=@entry.goal.id%>/edit" method="post">
+<form action="/goals/<%=@goal.id%>/update" method="post">
 
   <p class="lead invalid"><%= emtpy_field if locals.include?(:empty_field) %></p>
 
-  <!-- Goal Title -->
-  <div class="col-sm-offset-2 row">
-    <div class="col-sm-2">
-      <label for="Goal Title" class="form-control-label">Goal Title:</label>
-    </div>
-    <div class="col-sm-5">
-      <input type="text" id="username" name="title" class="form-control" value="<%=@entry.goal.title%>">
-    </div>
-  </div><br><br>
+  <h4 id="instructions">Update the amount of time you worked on a muscle group today (record your time in minutes).</h4><br><br>
 
-
-  <h4 id="instructions">Edit your current fitness goal (record your time in minutes).</h4><br><br>
-
-  <div id="work">
+  <div id="align_exercise_table">
 
     <!-- Chest -->
     <div class="row">
@@ -25,7 +14,7 @@
         <label for="chest" class="form-control-label">Chest:</label>
       </div>
       <div class="col-sm-1">
-        <input type="text" id="chest" name="entries[chest]" class="form-control" value="<%=@entry.chest%>">
+        <input type="text" id="chest" name="entries[chest]" class="form-control" placeholder="<%=@goal.entry.chest%>">
       </div>
 
       <!-- Shoulders -->
@@ -33,9 +22,10 @@
         <label for="shoulders" class="form-control-label">Shoulders:</label>
       </div>
       <div class="col-sm-1">
-        <input type="text" id="shoulders" name="entries[shoulders]" class="form-control" value="<%=@entry.shoulders%>">
+        <input type="text" id="shoulders" name="entries[shoulders]" class="form-control" placeholder="<%=@goal.entry.shoulders%>">
       </div>
     </div><br>
+
 
     <!-- Back -->
     <div class="row">
@@ -43,7 +33,7 @@
         <label for="back" class="form-control-label">Back:</label>
       </div>
       <div class="col-sm-1">
-        <input type="text" id="back" name="entries[back]" class="form-control" value="<%=@entry.back%>">
+        <input type="text" id="back" name="entries[back]" class="form-control" placeholder="<%=@goal.entry.back%>">
       </div>
 
       <!-- Arms -->
@@ -51,7 +41,7 @@
         <label for="arms" class="form-control-label">Bi's/Tri's:</label>
       </div>
       <div class="col-sm-1">
-        <input type="text" id="arms" name="entries[arms]" class="form-control" value="<%=@entry.arms%>">
+        <input type="text" id="arms" name="entries[arms]" class="form-control" placeholder="<%=@goal.entry.arms%>">
       </div>
     </div><br>
 
@@ -61,7 +51,7 @@
         <label for="legs" class="form-control-label">Legs:</label>
       </div>
       <div class="col-sm-1">
-        <input type="text" id="legs" name="entries[legs]" class="form-control" value="<%=@entry.legs%>">
+        <input type="text" id="legs" name="entries[legs]" class="form-control" placeholder="<%=@goal.entry.legs%>">
       </div>
 
       <!-- Cardio -->
@@ -69,7 +59,7 @@
         <label for="cardio" class="form-control-label">Cardio:</label>
       </div>
       <div class="col-sm-1">
-        <input type="text" id="cardio" name="entries[cardio]" class="form-control" value="<%=@entry.cardio%>">
+        <input type="text" id="cardio" name="entries[cardio]" class="form-control" placeholder="<%=@goal.entry.cardio%>">
       </div>
     </div><br>
   </div><br>
@@ -77,7 +67,7 @@
   <!-- Submit Button -->
   <div class="form-group row" id="goal-button">
     <div class="col-sm-offset-4 col-sm-2">
-      <button type="submit" value="submit" class="btn btn-success btn-lg">Edit Your Goal</button>
+      <button type="submit" value="submit" class="btn btn-success btn-lg">Update Your Goal</button>
     </div>
   </div>
 
