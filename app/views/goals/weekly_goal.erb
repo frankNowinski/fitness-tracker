@@ -1,0 +1,47 @@
+<h2 id="weekly-goal-header">Your Weekly Fitness Goal</h2><br><br>
+
+<div class="row" id="goal-table">
+
+  <div class="col-sm-offset-3 col-sm-7">
+    <table class="table">
+      <thead>
+        <th class="table_header" id="table-header">Exercise</th>
+        <th class="table_header">Chest</th>
+        <th class="table_header">Back</th>
+        <th class="table_header">Shoulders</th>
+        <th class="table_header">Arms</th>
+        <th class="table_header">Legs</th>
+        <th class="table_header">Cardio</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table_data" id="table-header">Time Left</td>
+          <td class="table_data"><%= @entry.chest %></td>
+          <td class="table_data"><%= @entry.back %></td>
+          <td class="table_data"><%= @entry.shoulders %></td>
+          <td class="table_data"><%= @entry.arms %></td>
+          <td class="table_data"><%= @entry.legs %></td>
+          <td class="table_data"><%= @entry.cardio %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div><br><br>
+
+<div class="form-group row" id="weekly-buttons-pos">
+  <div class="col-sm-offset-2 col-sm-2">
+    <a href="/entry/<%=@entry.id%>/update"><button type="submit" class="btn btn-primary btn-lg weekly-button">Update Goal</button></a>
+  </div>
+
+  <div class="col-sm-2">
+    <a href="/entry/<%=@entry.id%>/edit"><button type="submit" class="btn btn-primary btn-lg weekly-button">Edit Goal</button></a>
+  </div>
+
+  <form action="/goals/<%=@entry.goal.id%>/delete" method="post">
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-danger btn-lg weekly-button">Delete Goal</button></a>
+    </div>
+  </form>
+</div><br><br>
+
+<p class="lead" id="days-left-message">You have <strong class="invalid"><%=@entry.days_left %></strong> days left to complete your goal!</p>

@@ -1,5 +1,18 @@
-<h2 id="goals_index_title">Your Current Fitness Goals</h2><br>
+<h2 id="goals-header">Goals Log</h2><br><br>
 
-<% @user.goals.each do |goal| %>
-<h2 id="goal_title"><a href="/goals/<%=goal.id%>"><%= goal.title %></a></h2>
-<% end %>
+<div class="col-sm-offset-3 col-sm-6">
+  <table class="table table-hover">
+    <thead>
+      <th class="table-header">Goal Title</th>
+      <th class="table-header">Date Created</th>
+    </thead>
+    <tbody>
+      <tr>
+        <% @goals.each do |goal| %>
+        <td class="table-data"><a href="/entry/<%=goal.entry.id%>"><%= goal.title %></a></td>
+        <td class="table-data"><a href="/entry/<%=goal.entry.id%>"><%= goal.entry.date %></a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

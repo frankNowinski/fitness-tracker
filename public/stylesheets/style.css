@@ -6,6 +6,7 @@ body {
 
 label {
   font-size: 1.3em;
+  text-shadow: 1px 1px 1px navy;
 }
 
 /* HEADER */
@@ -13,15 +14,16 @@ label {
 #header {
   background-color: #00abe6;
   color: white;
-  border-bottom: 1px #0099cc solid;
+  border-bottom: 1px solid #006599;
+  box-shadow: 1px 1px 5px #006599;
 }
 
-#homepage {
+#header-links {
   margin-top: 30px;
   text-align: center;
 }
 
-#homepage>a {
+#header-links>a {
   color: white;
   margin-right: 60px;
   text-shadow: 2px 2px 2px navy;
@@ -29,16 +31,29 @@ label {
 
 /* HOMEPAGE */
 
-#homepage_title {
-  padding: 80px;
+#homepage-title {
+  margin: 40px 45px 35px 0px;
   text-align: center;
   text-shadow: 1px 2px 2px navy;
+  padding: 5px;
 }
 
-.login_link {
-  color: white;
-  padding: 50px;
-  text-shadow: 1px 2px 2px navy;
+#signup-link {
+  color: navy;
+}
+
+#login-button>button {
+  margin-left: 45px;
+}
+
+#signup-link-pos {
+  margin-top: 30px;
+  margin-right: 55px;
+}
+
+#signup-title {
+  margin-left: 110px;
+  text-shadow: 1px 2px 1px navy;
 }
 
 .invalid {
@@ -46,41 +61,134 @@ label {
   font-size: 1.2em;
 }
 
-/* SIGNUP - LOGIN */
-
-.signup_title {
-  margin-left: 110px;
-}
-
 /* NEW GOAL */
 
-#goals_index_title {
-  text-align: center;
+#goals-index-title {
   margin-top: 35px;
+  margin-left: 370px;
+  text-shadow: 1px 1px 1px navy;
 }
 
 #instructions {
   text-align:center;
+  text-shadow: 1px 1px 1px navy;
 }
 
-#align_exercise_table {
-  margin-left: 54px;
+#new-fitness-goal-table{
+  margin-left: 63px;
 }
 
 #goal-button {
-  margin-left: 95px;
+  margin-left: 90px;
 }
 
-/* DISPALY GOALS */
+/* GOALS TABLE */
 
-#goal_title {
+#goals-header {
+  margin-top: 45px;
+  margin-left: 490px;
+  text-shadow: 1px 1px 1px navy;
+}
+
+th, td {
   text-align: center;
+  text-shadow: 1px 1px 1px navy;
 }
 
-#goal_title>a {
+.table a {
+  color: white;
+}
+
+.table-header {
+  font-size: 1.6em;
+}
+
+.table-data {
+  font-size: 1.4em;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #006599;
+}
+
+/* WEEKLY GOAL */
+
+#weekly-goal-header {
+  margin-top: 35px;
+  margin-left: 350px;
+  text-shadow: 1px 1px 1px navy;
+}
+
+#goal-table {
+  margin-right: 300px;
+  font-size: 1.6em;
+}
+
+#table-header {
+  padding-right: 30px;
+  border-right: 1px solid white;
+}
+
+#weekly-buttons-pos {
+  padding: 10px;
+  margin-left: 50px;
+}
+
+.weekly-button {
+  width: 150px;
+}
+
+#days-left-message {
+  margin-left: 310px;
+}
+
+/* SHOW ENTRY */
+
+#goal-header {
+  margin-top: 45px;
+  margin-left: 460px;
+  text-shadow: 1px 1px 1px navy;
+}
+
+.goal-button {
+  width: 150px;
+}
+
+#goal-buttons-pos {
+  margin-left: 340px;
+}
+
+#goal-title>a {
   color: white;
 }
 
 a:hover {
   color: white;
+}
+
+/* EDIT ENTRY */
+#edit-entry-header{
+  margin-top: 45px;
+  margin-left: 400px;
+  text-shadow: 1px 1px 1px navy;
+}
+
+#edit-button {
+  margin-left: 110px;
+}
+
+/* UPDATE ENTRY */
+
+#update-goal-header {
+  margin-top: 45px;
+  margin-left: 310px;
+  text-shadow: 1px 1px 1px navy;
+}
+
+#align-exercise-table {
+  margin-left: 65px;
+}
+
+#update-button {
+  margin-left: 90px;
 }

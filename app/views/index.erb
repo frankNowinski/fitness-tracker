@@ -1,5 +1,43 @@
-<h2 id="homepage_title">Welcome to Fitness Tracker!</h2>
+<h1 id="homepage-title">Welcome to Fitness Tracker!</h1>
 
-<div class="row">
-  <p class="lead text-center"><a href="/signup" class="login_link">Signup</a><a href="/login" class="login_link">Login</a></p>
+<div class="col-sm-offset-4">
+  <h2 id="signup-title">Login</h2><br>
+
+  <p class="invalid">
+    <% if locals.include?(:empty_field) %>
+    <%= empty_field %>
+    <% elsif locals.include?(:invalid_login) %>
+    <%= invalid_login %>
+    <% end %>
+  </p>
+
+  <form action="/login" method="post">
+
+    <!-- Username -->
+    <div class="form-group row">
+      <label for="username" class="col-sm-2 form-control-label">Username:</label>
+      <div class="col-sm-3">
+        <input type="text" id="username" name="data[username]" class="form-control" placeholder="Username">
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group row">
+      <label for="password" class="col-sm-2 form-control-label">Password:</label>
+      <div class="col-sm-3">
+        <input type="password" id="password" name="data[password]" class="form-control" placeholder="Password">
+      </div>
+    </div><br>
+
+    <!-- Submit Button -->
+    <div class="form-group row">
+      <div class="col-sm-offset-1 col-sm-1" id="login-button">
+        <button type="submit" value="login" class="btn btn-primary btn-lg">Login</button>
+      </div>
+    </div>
+
+  </form>
 </div>
+  <div class="row" id="signup-link-pos">
+    <p class="lead text-center">Or <a href="/signup" id="signup-link">Signup</a> for a new account.</p>
+  </div>

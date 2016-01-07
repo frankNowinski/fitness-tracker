@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160104201405) do
+ActiveRecord::Schema.define(version: 20160106080907) do
 
   create_table "entries", force: :cascade do |t|
-    t.integer "chest"
-    t.integer "back"
-    t.integer "shoulders"
-    t.integer "arms"
-    t.integer "legs"
-    t.integer "cardio"
-    t.integer "goal_id"
+    t.integer  "chest"
+    t.integer  "back"
+    t.integer  "shoulders"
+    t.integer  "arms"
+    t.integer  "legs"
+    t.integer  "cardio"
+    t.integer  "goal_id"
+    t.datetime "created_at"
   end
 
   create_table "goals", force: :cascade do |t|

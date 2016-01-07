@@ -13,12 +13,13 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
+
   <body>
     <div class="container-fluid" id="header">
-      <h2 id="homepage">
+      <h2 id="header-links">
         <a href="/">Fitness Tracker</a>
         <% if logged_in? %>
-        <a href="/current_goal">Current Goal</a>
+        <a href="/weekly_goal">Weekly Goal</a>
         <a href="/goals">Goals</a>
         <% end %>
         <a href="/goals/new">New Goal</a>

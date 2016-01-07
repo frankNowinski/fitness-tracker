@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_many :goals
-  has_many :entries, through: :goals
   has_secure_password
 
   def create_goal_with_entries(params)

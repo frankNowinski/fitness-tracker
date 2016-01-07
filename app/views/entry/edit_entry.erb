@@ -1,8 +1,8 @@
-<h2 id="goals_index_title">Edit Your Fitness Goal</h2><br>
+<h2 id="edit-entry-header">Edit Your Fitness Goal</h2><br>
 
-<form action="/goals/<%=@entry.goal.id%>/edit" method="post">
+<p class="lead invalid"><%= emtpy_field if locals.include?(:empty_field) %></p>
 
-  <p class="lead invalid"><%= emtpy_field if locals.include?(:empty_field) %></p>
+<form action="/entry/<%=@entry.id%>/edit" method="post">
 
   <!-- Goal Title -->
   <div class="col-sm-offset-2 row">
@@ -14,10 +14,9 @@
     </div>
   </div><br><br>
 
+  <h4 id="instructions">Edit the title or times of your fitness goal (record your time in minutes).</h4><br><br>
 
-  <h4 id="instructions">Edit your current fitness goal (record your time in minutes).</h4><br><br>
-
-  <div id="work">
+  <div id="new-fitness-goal-table">
 
     <!-- Chest -->
     <div class="row">
@@ -75,9 +74,9 @@
   </div><br>
 
   <!-- Submit Button -->
-  <div class="form-group row" id="goal-button">
+  <div class="form-group row" id="edit-button">
     <div class="col-sm-offset-4 col-sm-2">
-      <button type="submit" value="submit" class="btn btn-success btn-lg">Edit Your Goal</button>
+      <button type="submit" value="submit" class="btn btn-primary btn-lg">Edit Your Goal</button>
     </div>
   </div>
 
