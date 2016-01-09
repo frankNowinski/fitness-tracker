@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   def create_goal_with_entries(params)
     goal = self.goals.create(title: params[:title])
     goal.entry = Entry.new(params[:entries])
+    self.weekly_goal=(goal)
   end
 
   def before_save

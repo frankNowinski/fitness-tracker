@@ -21,16 +21,15 @@
         <% if logged_in? %>
         <a href="/weekly_goal">Weekly Goal</a>
         <a href="/goals">Goals</a>
-        <% end %>
         <a href="/goals/new">New Goal</a>
+        <% end %>
         <a href="/logout">Logout</a>
       </h2><br><br>
     </div>
+
     <div class="container">
       <%= yield %>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>

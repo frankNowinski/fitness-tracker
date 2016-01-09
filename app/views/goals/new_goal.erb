@@ -1,6 +1,6 @@
 <h2 id="goals-index-title">Create a New Fitness Goal!</h2><br>
 
-<p class="lead invalid"><%= emtpy_field if locals.include?(:empty_field) %></p>
+<p class="lead invalid" id="invalid-new-goal"><%= invalid_params unless locals.empty? %></p>
 
 <form action="/goals" method="post">
   <!-- Goal Title -->
@@ -71,6 +71,13 @@
       </div>
     </div><br>
   </div><br>
+
+  <!-- Weekly Goal Checkbox -->
+  <div class="row" id="weekly-goal-checkbox">
+    <label class="checkbox-inline">
+      <input type="checkbox" name="weekly_goal" value="1"> Make this your weekyl fitness goal
+    </label>
+  </div>
 
   <!-- Submit Button -->
   <div class="form-group row" id="goal-button">

@@ -29,6 +29,16 @@ label {
   text-shadow: 2px 2px 2px navy;
 }
 
+#header-links>a:hover {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+#header-links>a:active {
+  color: #00ff00;
+  text-decoration: none;
+}
+
 /* HOMEPAGE */
 
 #homepage-title {
@@ -78,8 +88,17 @@ label {
   margin-left: 63px;
 }
 
+#weekly-goal-checkbox {
+  margin-left: 385px;
+  padding-bottom: 20px;
+}
+
 #goal-button {
   margin-left: 90px;
+}
+
+#invalid-new-goal {
+  margin-left: 392px;
 }
 
 /* GOALS TABLE */
@@ -119,7 +138,7 @@ th, td {
   text-shadow: 1px 1px 1px navy;
 }
 
-#goal-table {
+.goal-table {
   margin-right: 300px;
   font-size: 1.6em;
 }

@@ -15,17 +15,21 @@ class GoalsController < ApplicationController
   end
 
   post '/goals' do
-    user = current_user
-    user.create_goal_with_entries(params)
-
-    redirect '/weekly_goal'
+    if Goal.valid_params?(params)
+      user = current_user
+      user.create_goal_with_entries(params)
+      redirect '/weekly_goal'
+    else
+      erb :'goals/new_goal', locals: {invalid_params: "Please fill in a title and at least one goal."}
+    end
   end
 
   # WEEKLY GOAL
   get '/weekly_goal' do
     redirect_if_not_logged_in
-    if current_user.goals.present?
-      @entry = current_user.goals.last.entry
+    binding.pry
+    if current_user.weekly_goal.present?
+      @entry = current_user.weekly_goal
       erb :'goals/weekly_goal'
     else
       redirect '/goals/new'

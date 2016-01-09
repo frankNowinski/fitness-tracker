@@ -1,8 +1,9 @@
 <h2 id="goal-header"><%= @entry.goal.title %></h2><br><br>
 
-<div class="row" id="goal-table">
+<div class="row goal-table">
+
   <div class="col-sm-offset-3 col-sm-6">
-    <table class="table table-hover">
+    <table class="table">
       <thead>
         <th class="table_header" id="table-header">Exercise</th>
         <th class="table_header">Chest</th>
@@ -32,7 +33,7 @@
     <a href="/entry/<%=@entry.id%>/edit"><button type="submit" class="btn btn-primary btn-lg goal-button">Edit Goal</button></a>
   </div>
 
-  <form action="/entry/<%=@entry.goal.id%>/delete" method="post">
+  <form action="/goals/<%=@entry.goal.id%>/delete" method="post">
     <div class="col-sm-3">
       <button type="submit" class="btn btn-danger btn-lg goal-button">Delete Goal</button></a>
     </div>

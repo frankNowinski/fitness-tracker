@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  # SINGUP
   get '/signup' do
     if !logged_in?
       erb :'user/signup'
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # LOGIN
   get '/login' do
     if logged_in?
       redirect '/weekly_goal'
@@ -43,6 +45,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # LOGOUT
   get '/logout' do
     if logged_in?
       session.clear
