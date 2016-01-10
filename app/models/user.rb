@@ -5,8 +5,16 @@ class User < ActiveRecord::Base
   def create_goal_with_entries(params)
     goal = self.goals.create(title: params[:title])
     goal.entry = Entry.new(params[:entries])
-    self.weekly_goal=(goal)
+
+    binding.pry
+    if params[:weekly_goal] == "1"
+      self.update(weekly_goal: goal.entry)
+    end
   end
+
+  # def wk_goal
+  #   Goal.find(self.weekly_goal).entry
+  # end
 
   def before_save
     username.downcase!
