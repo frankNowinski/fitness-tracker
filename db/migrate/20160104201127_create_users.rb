@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string  :username
       t.string  :password_digest
-      t.integer :weekly_goal, :default => 0
+      t.integer :weekly_goal_id
     end
   end
 end

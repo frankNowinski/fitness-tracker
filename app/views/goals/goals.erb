@@ -10,7 +10,7 @@
       <tr>
         <% @goals.each do |goal| %>
         <td class="table-data"><a href="/entry/<%=goal.entry.id%>"><%= goal.title %></a></td>
-        <td class="table-data"><a href="/entry/<%=goal.entry.id%>"><%= goal.entry.date %></a></td>
+        <td class="table-data"><a href="/entry/<%=goal.entry.id%>"><%= goal.entry.date_created %></a></td>
       </tr>
       <% end %>
     </tbody>

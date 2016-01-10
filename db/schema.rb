@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160106080907) do
   create_table "users", force: :cascade do |t|
     t.string  "username"
     t.string  "password_digest"
-    t.integer "weekly_goal"
+    t.integer "weekly_goal_id"
   end
 
 end
