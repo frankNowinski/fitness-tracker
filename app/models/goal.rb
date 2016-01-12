@@ -9,11 +9,5 @@ class Goal < ActiveRecord::Base
   def self.supplied_entries?(params)
     params[:entries].values.any?{|entry| entry != ""}
   end
-
-  # def self.numeric_values(params)
-  #   params[:entries].values.each do |time|
-  #     binding.pry
-  #   end
-  # end
-
+  
 end
