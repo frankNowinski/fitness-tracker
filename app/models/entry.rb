@@ -8,6 +8,7 @@ class Entry < ActiveRecord::Base
   end
 
   def record_updated_times(updated_exercises, entry)
+    binding.pry
     updated_exercises.each do |muscle, updated_time|
       original_time = entry.send("#{muscle}")
       entry.send(("#{muscle}="), (original_time - updated_time.to_i))

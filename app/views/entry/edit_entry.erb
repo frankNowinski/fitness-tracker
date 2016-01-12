@@ -1,7 +1,5 @@
 <h2 id="edit-entry-header">Edit Your Fitness Goal</h2><br>
 
-<p class="lead invalid"><%= emtpy_field if locals.include?(:empty_field) %></p>
-
 <form action="/entry/<%=@entry.id%>/edit" method="post">
 
   <!-- Goal Title -->

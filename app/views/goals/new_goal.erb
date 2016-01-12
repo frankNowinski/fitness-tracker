@@ -1,6 +1,6 @@
 <h2 id="goals-index-title">Create a New Fitness Goal!</h2><br>
 
-<p class="lead invalid" id="invalid-new-goal"><%= invalid_params unless locals.empty? %></p>
+<p class="lead invalid" id="invalid-new-goal"><%= invalid_params if locals.present? %></p>
 
 <form action="/goals" method="post">
   <!-- Goal Title -->

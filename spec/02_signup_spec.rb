@@ -9,7 +9,7 @@ describe UsersController do
     it 'signup directs user to index' do
       params = {
         :data => {
-          :username => "Tom",
+          :username => "tom",
           :password => "brady"
         }
       }
@@ -31,7 +31,7 @@ describe UsersController do
     it 'does not let a user sign up without a password' do
       params = {
         :data => {
-          :username => "Tom",
+          :username => "tom",
           :password => ""
         }
       }
@@ -40,13 +40,13 @@ describe UsersController do
     end
 
     it 'does not let a user sign up with a username that is taken' do
-      user = User.new(username: "Tom", password: "brady")
+      user = User.new(username: "tom", password: "brady")
       user.before_save
       user.save
 
       params = {
         :data => {
-          :username => "Tom",
+          :username => "tom",
           :password => "brady"
         }
       }
