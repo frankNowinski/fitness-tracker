@@ -16,7 +16,7 @@ class GoalsController < ApplicationController
 
   post '/goals' do
     if Goal.valid_params?(params)
-      Goal.create_for_user(current_user, params)
+      Goal.create_goal_for_user(current_user, params)
       redirect "/entry/#{current_user.last_entry}"
     else
       erb :'goals/new_goal', locals: {invalid_params: "Please fill in a title and at least one goal."}

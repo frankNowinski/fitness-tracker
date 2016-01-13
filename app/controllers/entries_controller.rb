@@ -1,18 +1,17 @@
 class EntriesController < ApplicationController
+  before "/entry*" do
+    redirect_if_not_logged_in
+  end
 
   # SHOW ENTRY
   get '/entry/:id' do
-    redirect_if_not_logged_in
     @entry = Entry.find(params[:id])
-
     erb :'entry/show_entry'
   end
 
   # EDIT ENTRY
   get '/entry/:id/edit' do
-    redirect_if_not_logged_in
     @entry = Entry.find(params[:id])
-
     erb :'entry/edit_entry'
   end
 
@@ -26,9 +25,7 @@ class EntriesController < ApplicationController
 
   # UPDATE ENTRY
   get '/entry/:id/update' do
-    redirect_if_not_logged_in
     @entry = Entry.find(params[:id])
-
     erb :'entry/update_entry'
   end
 
