@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   def self.taken_username?(params)
     User.find_by(username: params[:data][:username].downcase).present?
   end
-  
+
   # Instance Methods
   def create_goal_with_entries(params)
     goal = self.goals.create(title: params[:title])
@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   end
 
   def reset_weekly_goal(goal_id)
-    if weekly_goal_id == goal_id
+    if self.weekly_goal_id == goal_id
       update(weekly_goal_id: nil)
     end
   end

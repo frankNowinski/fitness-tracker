@@ -2,7 +2,7 @@ class Entry < ActiveRecord::Base
   belongs_to :goal
 
   def update_entry(params)
-    updated_muscles = get_updated_exercises(params)
+    updated_muscles = select_updated_muscles(params)
     entry = Entry.find(params[:id])
     record_updated_times(updated_muscles, entry)
   end
@@ -15,10 +15,8 @@ class Entry < ActiveRecord::Base
     entry.save
   end
 
-  def get_updated_exercises(params)
-    params[:entries].select do |muscle, time|
-      muscle if time.present?
-    end
+  def select_updated_muscles(params)
+    params[:entries].select{|muscle, time| muscle if time.present?}
   end
 
   def days_left
