@@ -28,18 +28,18 @@
   </div>
 </div><br><br>
 
-<div class="form-group row" id="weekly-buttons-pos">
+<div class="form-group row" id="goal-buttons-pos">
   <div class="col-sm-offset-2 col-sm-2">
-    <a href="/entry/<%=@entry.id%>/update"><button type="submit" class="btn btn-primary btn-lg weekly-button">Update Goal</button></a>
+    <a href="/entry/<%=@entry.id%>/update"><button type="submit" class="btn btn-primary btn-lg goal-button">Update Goal</button></a>
   </div>
 
   <div class="col-sm-2">
-    <a href="/entry/<%=@entry.id%>/edit"><button type="submit" class="btn btn-primary btn-lg weekly-button">Edit Goal</button></a>
+    <a href="/entry/<%=@entry.id%>/edit"><button type="submit" class="btn btn-primary btn-lg goal-button">Edit Goal</button></a>
   </div>
 
   <form action="/goals/<%=@entry.goal.id%>/delete" method="post">
     <div class="col-sm-2">
-      <button type="submit" class="btn btn-danger btn-lg weekly-button">Delete Goal</button></a>
+      <button type="submit" class="btn btn-danger btn-lg goal-button">Delete Goal</button></a>
     </div>
   </form>
 </div><br><br>

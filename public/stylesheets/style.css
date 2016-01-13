@@ -134,7 +134,7 @@ th, td {
 
 #weekly-goal-header {
   margin-top: 35px;
-  margin-left: 350px;
+  margin-left: 370px;
   text-shadow: 1px 1px 1px navy;
 }
 
@@ -146,15 +146,6 @@ th, td {
 #table-header {
   padding-right: 30px;
   border-right: 1px solid white;
-}
-
-#weekly-buttons-pos {
-  padding: 10px;
-  margin-left: 50px;
-}
-
-.weekly-button {
-  width: 150px;
 }
 
 #days-left-message {
@@ -174,7 +165,8 @@ th, td {
 }
 
 #goal-buttons-pos {
-  margin-left: 340px;
+  padding: 10px;
+  margin-left: 70px;
 }
 
 #goal-title>a {
@@ -186,6 +178,7 @@ a:hover {
 }
 
 /* EDIT ENTRY */
+
 #edit-entry-header{
   margin-top: 45px;
   margin-left: 400px;

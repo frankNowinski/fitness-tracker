@@ -2,14 +2,13 @@ class Entry < ActiveRecord::Base
   belongs_to :goal
 
   def update_entry(params)
-    updated_exercises = get_updated_exercises(params)
+    updated_muscles = get_updated_exercises(params)
     entry = Entry.find(params[:id])
-    record_updated_times(updated_exercises, entry)
+    record_updated_times(updated_muscles, entry)
   end
 
-  def record_updated_times(updated_exercises, entry)
-    binding.pry
-    updated_exercises.each do |muscle, updated_time|
+  def record_updated_times(updated_muscles, entry)
+    updated_muscles.each do |muscle, updated_time|
       original_time = entry.send("#{muscle}")
       entry.send(("#{muscle}="), (original_time - updated_time.to_i))
     end

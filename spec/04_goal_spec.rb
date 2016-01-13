@@ -24,22 +24,5 @@ describe GoalsController do
       click_button 'login'
       expect(page.current_path).to eq('/goals/new')
     end
-
-    # it 'creates a new goal' do
-    #   params = {
-    #     :title => "Goal",
-    #     :entries => {
-    #       :chest => 50,
-    #       :legs => 30
-    #     }
-    #   }
-    #
-    #   post '/goals', params
-    #   session = {}
-    #   session[:user_id] = 1
-    #   expect(last_response.status).to eq(302)
-    #   follow_redirect!
-    #   expect(last_response.status).to eq(302)
-    # end
   end
 end
