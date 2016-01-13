@@ -9,8 +9,7 @@ class Entry < ActiveRecord::Base
 
   def record_updated_times(updated_muscles, entry)
     updated_muscles.each do |muscle, updated_time|
-      original_time = entry.send("#{muscle}")
-      entry.send(("#{muscle}="), (original_time - updated_time.to_i))
+      entry.send(("#{muscle}="), (read_attribute(muscle) - updated_time.to_i))
     end
     entry.save
   end

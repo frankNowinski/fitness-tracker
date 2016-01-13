@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :goals
+  before_create :normalize_username
   has_secure_password
 
   # Class Methods
@@ -20,15 +21,6 @@ class User < ActiveRecord::Base
   end
 
   # Instance Methods
-  def create_goal_with_entries(params)
-    goal = self.goals.create(title: params[:title])
-    goal.entry = Entry.new(params[:entries])
-
-    if params[:weekly_goal] == "1"
-      self.update(weekly_goal_id: goal.id)
-    end
-  end
-
   def weekly_goal
     if self.weekly_goal_id.present?
       Goal.find(self.weekly_goal_id).entry
@@ -45,8 +37,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def before_save
-    username.downcase!
+  def normalize_username
+    self.username.downcase!
   end
 
 end

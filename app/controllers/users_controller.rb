@@ -15,7 +15,6 @@ class UsersController < ApplicationController
       erb :'user/signup', locals: error_message
     else
       @user = User.new(params[:data])
-      @user.before_save
       @user.save
       session[:user_id] = @user.id
       redirect to '/weekly_goal'
